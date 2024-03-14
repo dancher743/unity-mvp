@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Mvc
+namespace Mvp
 {
     public static class ControllerManager
     {

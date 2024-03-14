@@ -1,4 +1,4 @@
-﻿namespace Mvc
+﻿namespace Mvp
 {
     public class Controller<TView, TModel> : IController
         where TView : IView

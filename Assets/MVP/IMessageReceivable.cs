@@ -1,4 +1,4 @@
-﻿namespace Mvc
+﻿namespace Mvp
 {
     public interface IMessageReceivable
     {

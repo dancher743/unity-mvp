@@ -48,7 +48,7 @@ namespace Mvp
 
             if (controllers.ContainsKey(key))
             {
-                (controller as ICleareable)?.Clear();
+                (controller as IClearable)?.Clear();
                 controllers.Remove(key);
             }
         }

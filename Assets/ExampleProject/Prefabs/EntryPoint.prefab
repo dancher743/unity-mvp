@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7560670010723552911}
   - component: {fileID: 2699267540140489396}
   m_Layer: 0
-  m_Name: Application
+  m_Name: EntryPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

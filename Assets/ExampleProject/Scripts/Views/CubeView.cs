@@ -1,10 +1,8 @@
-using Mvp;
 using System;
-using UnityEngine;
 
 namespace ExampleProject.Views
 {
-    public class CubeView : MonoBehaviour, IView
+    public class CubeView : MonoView
     {
         public event Action Clicked;
 

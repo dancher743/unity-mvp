@@ -1,7 +1,6 @@
 using ExampleProject.Models;
 using ExampleProject.Views;
 using Mvp;
-using System;
 using UnityEngine;
 
 namespace ExampleProject.Presenters

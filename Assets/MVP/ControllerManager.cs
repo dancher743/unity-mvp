@@ -7,19 +7,19 @@ namespace Mvp
 {
     public static class ControllerManager
     {
-        private static readonly Dictionary<string, IController> controllers = new();
+        private static readonly Dictionary<string, IPresenter> controllers = new();
 
-        public static TController CreateController<TController>() where TController : IController, new()
+        public static TController CreateController<TController>() where TController : IPresenter, new()
         {
             return CreateController<TController>(Array.Empty<object>());
         }
 
-        public static TController CreateController<TController>(IView view, IModel model) where TController : IController
+        public static TController CreateController<TController>(IView view, IModel model) where TController : IPresenter
         {
             return CreateController<TController>(new object[] { view, model });
         }
 
-        public static TController CreateController<TController>(params object[] data) where TController : IController
+        public static TController CreateController<TController>(params object[] data) where TController : IPresenter
         {
             var controller = GetController<TController>(out string key);
 
@@ -42,7 +42,7 @@ namespace Mvp
             return controller;
         }
 
-        public static void RemoveController<TController>(TController controller) where TController : IController
+        public static void RemoveController<TController>(TController controller) where TController : IPresenter
         {
             var key = GetKey(controller.GetType());
 
@@ -54,7 +54,7 @@ namespace Mvp
         }
 
         public static void DispatchMessageTo<TController, TMessageData>(TMessageData data)
-            where TController : IController, IMessageReceivable
+            where TController : IPresenter, IMessageReceivable
             where TMessageData : struct
         {
             var controller = GetController<TController>(out _);
@@ -80,7 +80,7 @@ namespace Mvp
             }
         }
 
-        private static TController GetController<TController>(out string key) where TController : IController
+        private static TController GetController<TController>(out string key) where TController : IPresenter
         {
             TController controller = default;
 

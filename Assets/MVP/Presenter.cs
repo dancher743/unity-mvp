@@ -1,17 +1,17 @@
 ﻿namespace Mvp
 {
-    public class Controller<TView, TModel> : IController
+    public class Presenter<TView, TModel> : IPresenter
         where TView : IView
         where TModel : IModel
     {
         protected TView view;
         protected TModel model;
 
-        public Controller()
+        public Presenter()
         {
         }
 
-        public Controller(TView view, TModel model)
+        public Presenter(TView view, TModel model)
         {
             this.view = view;
             this.model = model;

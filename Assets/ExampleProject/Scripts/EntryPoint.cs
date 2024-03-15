@@ -7,17 +7,17 @@ namespace ExampleProject
 {
     public class EntryPoint : MonoBehaviour
     {
-        private PresenterFactory presenterFactory;
-
-        private CubePresenter cubePresenter;
-        private UIPresenter UIPresenter;
-
         [Header("Views")]
         [SerializeField]
         private CubeView cubeView;
 
         [SerializeField]
         private UIView UIView;
+
+        private CubePresenter cubePresenter;
+        private UIPresenter UIPresenter;
+
+        private PresenterFactory presenterFactory;
 
         private void Awake()
         {

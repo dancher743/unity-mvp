@@ -4,25 +4,25 @@ using System.Linq;
 
 namespace Mvp.Messaging
 {
-    public static class MessageDispatcher
+    public class MessageDispatcher
     {
-        private static readonly Dictionary<Type, IMessageSubscriber> subscribers = new();
+        private readonly Dictionary<Type, IMessageSubscriber> subscribers = new();
 
-        public static void Subscribe(IMessageSubscriber subscriber)
+        public void Subscribe(IMessageSubscriber subscriber)
         {
             var key = GenerateKeyFor(subscriber);
 
             subscribers.TryAdd(key, subscriber);
         }
 
-        public static void Unsubscribe(IMessageSubscriber subscriber)
+        public void Unsubscribe(IMessageSubscriber subscriber)
         {
             var key = GenerateKeyFor(subscriber);
 
             subscribers.Remove(key);
         }
 
-        public static void SendMessageTo<TSubscriber, TMessage>(TMessage message) where TSubscriber : IMessageSubscriber
+        public void SendMessageTo<TSubscriber, TMessage>(TMessage message) where TSubscriber : IMessageSubscriber
         {
             var key = GenerateKeyFor<TSubscriber>();
 
@@ -32,7 +32,7 @@ namespace Mvp.Messaging
             }
         }
 
-        public static void SendMessageToAll<TMessage>(TMessage message, bool isInReverseOrder = false)
+        public void SendMessageToAll<TMessage>(TMessage message, bool isInReverseOrder = false)
         {
             var allSubscribers = subscribers.Values;
 
@@ -47,12 +47,12 @@ namespace Mvp.Messaging
             }
         }
 
-        private static Type GenerateKeyFor(IMessageSubscriber subscriber)
+        private Type GenerateKeyFor(IMessageSubscriber subscriber)
         {
             return subscriber.GetType();
         }
 
-        private static Type GenerateKeyFor<TSubscriber>()
+        private Type GenerateKeyFor<TSubscriber>()
         {
             return typeof(TSubscriber);
         }

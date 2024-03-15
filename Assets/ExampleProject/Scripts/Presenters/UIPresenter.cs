@@ -7,14 +7,17 @@ namespace ExampleProject.Presenters
 {
     public class UIPresenter : Presenter<UIView, UIModel>, IMessageSubscriber
     {
-        public UIPresenter(UIView view, UIModel model) : base(view, model)
+        private readonly MessageDispatcher messageDispatcher;
+
+        public UIPresenter(UIView view, UIModel model, MessageDispatcher messageDispatcher) : base(view, model)
         {
-            MessageDispatcher.Subscribe(this);
+            this.messageDispatcher = messageDispatcher;
+            messageDispatcher.Subscribe(this);
         }
 
         protected override void OnClear()
         {
-            MessageDispatcher.Unsubscribe(this);
+            messageDispatcher.Unsubscribe(this);
         }
 
         void IMessageSubscriber.ReceiveMessage<TMessage>(TMessage message)

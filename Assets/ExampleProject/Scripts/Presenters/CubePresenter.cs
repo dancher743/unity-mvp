@@ -10,8 +10,11 @@ namespace ExampleProject.Presenters
 
     public class CubePresenter : Presenter<CubeView, CubeModel>
     {
-        public CubePresenter(CubeView view, CubeModel model) : base(view, model)
+        private readonly MessageDispatcher messageDispatcher;
+
+        public CubePresenter(CubeView view, CubeModel model, MessageDispatcher messageDispatcher) : base(view, model)
         {
+            this.messageDispatcher = messageDispatcher;
         }
 
         protected override void OnAddEventHandlers()
@@ -27,8 +30,7 @@ namespace ExampleProject.Presenters
         private void OnViewClicked()
         {
             Debug.Log("Clicked!");
-            MessageDispatcher.SendMessageTo<UIPresenter, CubeClickedMessage>(new CubeClickedMessage("123"));
-            //MessageDispatcher.SendMessageToAll(new CubeClickedMessage("123"));
+            messageDispatcher.SendMessageTo<UIPresenter, CubeClickedMessage>(new CubeClickedMessage("123"));
         }
     }
 }

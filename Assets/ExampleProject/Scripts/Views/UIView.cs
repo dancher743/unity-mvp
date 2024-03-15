@@ -1,13 +1,13 @@
 using Mvp;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ExampleProject.Views
 {
     public class UIView : MonoView
     {
         [SerializeField]
-        private TextMeshProUGUI colorText;
+        private Text colorText;
 
         public string ColorText
         {

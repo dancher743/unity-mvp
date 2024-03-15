@@ -7,11 +7,6 @@
         protected TView view;
         protected TModel model;
 
-        public Presenter()
-        {
-            OnAddEventHandlers();
-        }
-
         public Presenter(TView view, TModel model)
         {
             this.view = view;

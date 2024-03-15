@@ -7,25 +7,33 @@ namespace ExampleProject
 {
     public class EntryPoint : MonoBehaviour
     {
-        private CubePresenter cubePresenter;
         private PresenterFactory presenterFactory;
 
-        [SerializeField] 
-        private Transform viewParent;
+        private CubePresenter cubePresenter;
+        private UIPresenter UIPresenter;
 
-        public void Awake()
+        [Header("Views")]
+        [SerializeField]
+        private CubeView cubeView;
+
+        [SerializeField]
+        private UIView UIView;
+
+        private void Awake()
         {
-            presenterFactory = new PresenterFactory(viewParent);
+            presenterFactory = new PresenterFactory();
         }
 
-        public void Start()
+        private void Start()
         {
-            cubePresenter = presenterFactory.Create<CubePresenter, CubeView, CubeModel>();
+            cubePresenter = presenterFactory.Create<CubePresenter>(cubeView, new CubeModel());
+            UIPresenter = presenterFactory.Create<UIPresenter>(UIView, new UIModel());
         }
 
-        public void OnDestroy()
+        private void OnDestroy()
         {
             cubePresenter.Clear();
+            UIPresenter.Clear();
         }
     }
 }

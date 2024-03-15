@@ -6,25 +6,25 @@ namespace Mvp.Messaging
 {
     public class MessageDispatcher
     {
-        private readonly Dictionary<Type, IMessageSubscriber> subscribers = new();
+        private readonly Dictionary<string, IMessageSubscriber> subscribers = new();
 
         public void Subscribe(IMessageSubscriber subscriber)
         {
-            var key = GenerateKeyFor(subscriber);
+            var key = GetKeyForSubscriber(subscriber.GetType());
 
             subscribers.TryAdd(key, subscriber);
         }
 
         public void Unsubscribe(IMessageSubscriber subscriber)
         {
-            var key = GenerateKeyFor(subscriber);
+            var key = GetKeyForSubscriber(subscriber.GetType());
 
             subscribers.Remove(key);
         }
 
         public void SendMessageTo<TSubscriber, TMessage>(TMessage message) where TSubscriber : IMessageSubscriber
         {
-            var key = GenerateKeyFor<TSubscriber>();
+            var key = GetKeyForSubscriber(typeof(TSubscriber));
 
             if (subscribers.TryGetValue(key, out IMessageSubscriber subscriber))
             {
@@ -47,14 +47,9 @@ namespace Mvp.Messaging
             }
         }
 
-        private Type GenerateKeyFor(IMessageSubscriber subscriber)
+        private string GetKeyForSubscriber(Type type)
         {
-            return subscriber.GetType();
-        }
-
-        private Type GenerateKeyFor<TSubscriber>()
-        {
-            return typeof(TSubscriber);
+            return type.GUID.ToString();
         }
     }
 }

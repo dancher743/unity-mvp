@@ -20,7 +20,7 @@ namespace ExampleProject
         private UIPresenter UIPresenter;
 
         private readonly IPresenterFactory presenterFactory = new PresenterFactory();
-        private readonly MessageDispatcher messageDispatcher = new MessageDispatcher();
+        private readonly MessageDispatcher messageDispatcher = new();
 
         private void Start()
         {

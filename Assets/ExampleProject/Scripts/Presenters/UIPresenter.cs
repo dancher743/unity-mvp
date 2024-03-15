@@ -2,6 +2,7 @@ using ExampleProject.Models;
 using ExampleProject.Views;
 using Mvp.Messaging;
 using Mvp.Presenters;
+using UnityEngine;
 
 namespace ExampleProject.Presenters
 {
@@ -25,7 +26,7 @@ namespace ExampleProject.Presenters
             switch (message)
             {
                 case CubeClickedMessage cubeClickedMessage:
-                    view.ColorText = cubeClickedMessage.Text;
+                    Debug.Log(cubeClickedMessage.Text);
                     break;
             }
         }

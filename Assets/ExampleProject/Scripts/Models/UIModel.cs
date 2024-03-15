@@ -1,4 +1,4 @@
-using Mvp;
+using Mvp.Models;
 
 namespace ExampleProject.Models
 {

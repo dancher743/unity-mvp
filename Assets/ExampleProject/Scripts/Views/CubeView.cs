@@ -1,4 +1,4 @@
-using Mvp;
+using Mvp.Views;
 using System;
 
 namespace ExampleProject.Views

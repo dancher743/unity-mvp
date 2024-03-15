@@ -1,4 +1,4 @@
-﻿namespace Mvp
+﻿namespace Mvp.Presenters
 {
     public interface IPresenter
     {

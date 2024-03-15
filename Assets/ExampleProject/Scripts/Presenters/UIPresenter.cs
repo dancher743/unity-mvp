@@ -1,6 +1,7 @@
 using ExampleProject.Models;
 using ExampleProject.Views;
-using Mvp;
+using Mvp.Messaging;
+using Mvp.Presenters;
 
 namespace ExampleProject.Presenters
 {

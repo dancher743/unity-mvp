@@ -1,4 +1,7 @@
-﻿namespace Mvp
+﻿using Mvp.Models;
+using Mvp.Views;
+
+namespace Mvp.Presenters
 {
     public class Presenter<TView, TModel> : IPresenter, IClearable
         where TView : IView

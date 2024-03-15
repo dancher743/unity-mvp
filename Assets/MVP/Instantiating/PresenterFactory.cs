@@ -1,8 +1,9 @@
+using Mvp.Presenters;
 using System;
 using System.Linq;
 using UnityEngine;
 
-namespace Mvp
+namespace Mvp.Instantiating
 {
     public class PresenterFactory : IPresenterFactory
     {

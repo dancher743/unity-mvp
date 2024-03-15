@@ -1,4 +1,4 @@
-﻿namespace Mvp
+﻿namespace Mvp.Messaging
 {
     public interface IMessageSubscriber
     {

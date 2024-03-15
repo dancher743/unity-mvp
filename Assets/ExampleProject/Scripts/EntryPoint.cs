@@ -1,7 +1,7 @@
 using ExampleProject.Models;
 using ExampleProject.Presenters;
 using ExampleProject.Views;
-using Mvp;
+using Mvp.Instantiating;
 using UnityEngine;
 
 namespace ExampleProject

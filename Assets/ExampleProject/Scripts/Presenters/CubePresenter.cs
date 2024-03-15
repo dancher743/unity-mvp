@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace ExampleProject.Presenters
 {
+    public record CubeClickedMessage(string Text);
+
     public class CubePresenter : Presenter<CubeView, CubeModel>
     {
         public CubePresenter(CubeView view, CubeModel model) : base(view, model)
@@ -24,6 +26,8 @@ namespace ExampleProject.Presenters
         private void OnViewClicked()
         {
             Debug.Log("Clicked!");
+            MessageDispatcher.SendMessageTo<UIPresenter, CubeClickedMessage>(new CubeClickedMessage("123"));
+            //MessageDispatcher.SendMessageToAll(new CubeClickedMessage("123"));
         }
     }
 }

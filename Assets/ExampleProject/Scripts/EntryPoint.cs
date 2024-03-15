@@ -1,6 +1,7 @@
 using ExampleProject.Models;
 using ExampleProject.Presenters;
 using ExampleProject.Views;
+using Mvp;
 using UnityEngine;
 
 namespace ExampleProject
@@ -17,12 +18,7 @@ namespace ExampleProject
         private CubePresenter cubePresenter;
         private UIPresenter UIPresenter;
 
-        private PresenterFactory presenterFactory;
-
-        private void Awake()
-        {
-            presenterFactory = new PresenterFactory();
-        }
+        private readonly IPresenterFactory presenterFactory = new PresenterFactory();
 
         private void Start()
         {

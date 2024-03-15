@@ -1,9 +1,8 @@
-using Mvp;
 using System;
 using System.Linq;
 using UnityEngine;
 
-namespace ExampleProject
+namespace Mvp
 {
     public class PresenterFactory : IPresenterFactory
     {

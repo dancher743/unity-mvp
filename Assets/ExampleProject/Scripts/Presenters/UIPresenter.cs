@@ -3,13 +3,12 @@ using ExampleProject.Models;
 using ExampleProject.Views;
 using Mvp.Messaging;
 using Mvp.Presenters;
-using UnityEngine;
 
 namespace ExampleProject.Presenters
 {
     public class UIPresenter : Presenter<UIView, UIModel>, IMessageSubscriber
     {
-        private readonly MessageDispatcher messageDispatcher;
+        private MessageDispatcher messageDispatcher;
 
         public UIPresenter(UIView view, UIModel model, MessageDispatcher messageDispatcher) : base(view, model)
         {
@@ -20,6 +19,17 @@ namespace ExampleProject.Presenters
         protected override void OnClear()
         {
             messageDispatcher.Unsubscribe(this);
+            messageDispatcher = null;
+        }
+
+        protected override void OnAddEventHandlers()
+        {
+            model.ColorTextChanged += OnModelColorTextChanged;
+        }
+
+        protected override void OnRemoveEventHandlers()
+        {
+            model.ColorTextChanged -= OnModelColorTextChanged;
         }
 
         void IMessageSubscriber.ReceiveMessage<TMessage>(TMessage message)
@@ -27,9 +37,14 @@ namespace ExampleProject.Presenters
             switch (message)
             {
                 case CubeColorMessage cubeColorMessage:
-                    Debug.Log(cubeColorMessage.ToString());
+                    model.ColorText = cubeColorMessage.Color.ToString();
                     break;
             }
+        }
+
+        private void OnModelColorTextChanged(string color)
+        {
+            view.ColorText = color;
         }
     }
 }

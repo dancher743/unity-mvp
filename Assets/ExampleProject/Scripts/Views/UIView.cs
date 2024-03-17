@@ -11,10 +11,7 @@ namespace ExampleProject.Views
 
         public string ColorText
         {
-            set
-            {
-                colorText.text = value;
-            }
+            set => colorText.text = value;
         }
     }
 }

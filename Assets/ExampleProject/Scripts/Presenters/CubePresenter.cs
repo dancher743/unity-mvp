@@ -14,6 +14,7 @@ namespace ExampleProject.Presenters
         public CubePresenter(CubeView view, CubeModel model, MessageDispatcher messageDispatcher) : base(view, model)
         {
             this.messageDispatcher = messageDispatcher;
+            model.Color = Color.white;
         }
 
         protected override void OnClear()

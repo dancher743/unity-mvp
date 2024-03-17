@@ -2,5 +2,8 @@
 
 namespace ExampleProject.Messaging
 {
-    public record CubeColorMessage(Color Color);
+    public readonly struct CubeColorMessage
+    {
+        public Color Color { get; init; }
+    }
 }

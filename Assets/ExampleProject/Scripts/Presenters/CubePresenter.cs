@@ -41,7 +41,7 @@ namespace ExampleProject.Presenters
         private void OnModelColorChanged(Color color)
         {
             view.Color = color;
-            messageDispatcher.SendMessageTo<UIPresenter, CubeColorMessage>(new CubeColorMessage(color));
+            messageDispatcher.SendMessageTo<UIPresenter, CubeColorMessage>(new CubeColorMessage { Color = color });
         }
     }
 }

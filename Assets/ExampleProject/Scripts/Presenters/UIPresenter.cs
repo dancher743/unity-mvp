@@ -1,3 +1,4 @@
+using ExampleProject.Messaging;
 using ExampleProject.Models;
 using ExampleProject.Views;
 using Mvp.Messaging;
@@ -25,8 +26,8 @@ namespace ExampleProject.Presenters
         {
             switch (message)
             {
-                case CubeClickedMessage cubeClickedMessage:
-                    Debug.Log(cubeClickedMessage.Text);
+                case CubeColorMessage cubeColorMessage:
+                    Debug.Log(cubeColorMessage.ToString());
                     break;
             }
         }

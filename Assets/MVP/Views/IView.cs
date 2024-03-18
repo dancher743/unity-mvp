@@ -1,4 +1,4 @@
-﻿namespace Mvc
+﻿namespace Mvp.Views
 {
     public interface IView
     {

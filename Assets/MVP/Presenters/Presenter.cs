@@ -20,7 +20,7 @@ namespace Mvp.Presenters
         public void Clean()
         {
             OnRemoveEventHandlers();
-            OnClear();
+            OnClean();
         }
 
         protected virtual void OnAddEventHandlers()
@@ -31,7 +31,7 @@ namespace Mvp.Presenters
         {
         }
 
-        protected virtual void OnClear()
+        protected virtual void OnClean()
         {
         }
     }

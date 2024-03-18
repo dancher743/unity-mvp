@@ -142,18 +142,22 @@ public class CubePresenter : Presenter<CubeView, CubeModel>
 }
 ```
 
-Cleaning
+Clean up
 ---
-To clean a `Presenter` (or some class) you can use built-in `IClearable` interface -
+To clean a `Presenter` (or some class) you can use built-in `ICleanable` interface -
 
 ```
-public interface IClearable
+public interface ICleanable
 {
-	public void Clear();
+	public void Clean();
 }
 ```
 
-In the example  -
+Base `Presenter` class implements `ICleanable` interface -
+
+`Presenter<TView, TModel> : IPresenter, ICleanable`
+
+In the example, inside of `EntryPoint.OnDestroy()` method using `Clean` to cleaning up resources -
 
 ```
 public class EntryPoint : MonoBehaviour
@@ -165,8 +169,8 @@ public class EntryPoint : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		cubePresenter.Clear();
-		UIPresenter.Clear();
+		cubePresenter.Clean();
+		UIPresenter.Clean();
 	}
 {
 ```

@@ -30,8 +30,8 @@ namespace ExampleProject
 
         private void OnDestroy()
         {
-            cubePresenter.Clear();
-            UIPresenter.Clear();
+            cubePresenter.Clean();
+            UIPresenter.Clean();
         }
     }
 }

@@ -3,7 +3,7 @@ using Mvp.Views;
 
 namespace Mvp.Presenters
 {
-    public class Presenter<TView, TModel> : IPresenter, IClearable
+    public class Presenter<TView, TModel> : IPresenter, ICleanable
         where TView : IView
         where TModel : IModel
     {
@@ -17,7 +17,7 @@ namespace Mvp.Presenters
             OnAddEventHandlers();
         }
 
-        public void Clear()
+        public void Clean()
         {
             OnRemoveEventHandlers();
             OnClear();

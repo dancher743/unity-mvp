@@ -1,7 +1,7 @@
 # unity-mvp
 Implementation of MVP (Model-View-Presenter) architectural pattern via Unity engine.
 
-Recommend to get [example project](https://github.com/dancher743/unity-mvp/releases/tag/example_project) before starting.
+Before starting, it is recommended to get [example project](https://github.com/dancher743/unity-mvp/releases/tag/example_project).
 
 Getting Started
 ---

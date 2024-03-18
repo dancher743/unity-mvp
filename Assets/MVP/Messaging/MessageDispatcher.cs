@@ -1,18 +1,25 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace Mvp.Messaging
 {
     public class MessageDispatcher
     {
-        private readonly Dictionary<string, IMessageSubscriber> subscribers = new();
+        private readonly Dictionary<int, IMessageSubscriber> subscribers = new();
 
         public void Subscribe(IMessageSubscriber subscriber)
         {
             var key = GetKeyForSubscriber(subscriber.GetType());
 
-            subscribers.TryAdd(key, subscriber);
+            if (subscribers.ContainsKey(key))
+            {
+                Debug.LogError($"Message Dispatcher: Cannot add {subscriber} because it's already subscribed.");
+                return;
+            }
+
+            subscribers.Add(key, subscriber);
         }
 
         public void Unsubscribe(IMessageSubscriber subscriber)
@@ -47,9 +54,9 @@ namespace Mvp.Messaging
             }
         }
 
-        private string GetKeyForSubscriber(Type type)
+        private int GetKeyForSubscriber(Type type)
         {
-            return type.GUID.ToString();
+            return type.GetHashCode();
         }
     }
 }

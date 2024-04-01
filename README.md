@@ -65,6 +65,8 @@ To create an instance of a `Presenter` use `Create<TPresenter>()` method in `Pre
 [SerializeField]
 private CubeView cubeView;
 
+...
+
 private CubePresenter cubePresenter;
 
 ...

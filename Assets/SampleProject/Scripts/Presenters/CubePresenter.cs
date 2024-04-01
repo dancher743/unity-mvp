@@ -17,7 +17,7 @@ namespace SampleProject.Presenters
             model.Color = Color.white;
         }
 
-        protected override void OnClean()
+        protected override void OnClear()
         {
             messageDispatcher = null;
         }

@@ -1,7 +1,7 @@
 # unity-mvp
 Implementation of MVP (Model-View-Presenter) architectural pattern via Unity engine.
 
-Recommend to get [example project](https://github.com/dancher743/unity-mvp/releases/tag/example_project) before starting.
+Before starting, it is recommended to get [sample project](https://github.com/dancher743/unity-mvp/releases/tag/sample-project).
 
 Getting Started
 ---
@@ -142,22 +142,22 @@ public class CubePresenter : Presenter<CubeView, CubeModel>
 }
 ```
 
-Clean up
+Clearing
 ---
-To clean a `Presenter` (or some class) you can use built-in `ICleanable` interface -
+To clear a `Presenter` (or some class) you can use built-in `IClearable` interface -
 
 ```
-public interface ICleanable
+public interface IClearable
 {
-	public void Clean();
+	public void Clear();
 }
 ```
 
-Base `Presenter` class implements `ICleanable` interface -
+Base `Presenter` class implements `IClearable` interface -
 
-`Presenter<TView, TModel> : IPresenter, ICleanable`
+`Presenter<TView, TModel> : IPresenter, IClearable`
 
-In the example, inside of `EntryPoint.OnDestroy()` method using `Clean` to cleaning up resources -
+In the example, inside of `EntryPoint.OnDestroy()` method `Clear` is used to free up resources -
 
 ```
 public class EntryPoint : MonoBehaviour
@@ -169,12 +169,12 @@ public class EntryPoint : MonoBehaviour
 
 	private void OnDestroy()
 	{
-		cubePresenter.Clean();
-		UIPresenter.Clean();
+		cubePresenter.Clear();
+		UIPresenter.Clear();
 	}
 {
 ```
 
-Example
+Sample
 ---
-Example project with the latest version of the package is available [here](https://github.com/dancher743/unity-mvp/releases/tag/example_project).
+Sample project with the latest version of the package is available [here](https://github.com/dancher743/unity-mvp/releases/tag/sample-project).

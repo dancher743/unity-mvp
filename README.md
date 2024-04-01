@@ -22,7 +22,7 @@ Implement `IModel` interface to create a _Model_ -
 ```
 public class CubeModel : IModel
 {
-	...
+	// ...
 }
 ```
 
@@ -32,7 +32,7 @@ Implement `IView` interface to create a _View_ -
 ```
 public class CubeView : MonoBehaviour, IView
 {
-	...
+	// ...
 }
 ```
 
@@ -50,7 +50,7 @@ public class CubePresenter : Presenter<CubeView, CubeModel>
 {
 	public CubePresenter(CubeView cubeView, CubeModel cubeModel) : base(cubeView, cubeModel)
 	{
-		...
+		// ...
 	}
 }
 ```
@@ -65,11 +65,11 @@ To create an instance of a `Presenter` use `Create<TPresenter>()` method in `Pre
 [SerializeField]
 private CubeView cubeView;
 
-...
+// ...
 
 private CubePresenter cubePresenter;
 
-...
+// ...
 
 void Start()
 {
@@ -109,7 +109,7 @@ In the example we have `UIPresenter` -
 ```
 public class UIPresenter : Presenter<UIView, UIModel>, IMessageSubscriber
 {
-	...
+	// ...
 	
 	void IMessageSubscriber.ReceiveMessage<TMessage>(TMessage message)
 	{
@@ -135,7 +135,7 @@ In the example where `CubePresenter` class is -
 ```
 public class CubePresenter : Presenter<CubeView, CubeModel>
 {
-  	...
+  	// ...
 
 	private void OnModelColorChanged(Color color)
 	{
@@ -165,10 +165,12 @@ In the example, inside of `EntryPoint.OnDestroy()` method `Clear` is used to fre
 ```
 public class EntryPoint : MonoBehaviour
 {
+	// ...
+	
 	private CubePresenter cubePresenter;
 	private UIPresenter UIPresenter;
 
-	...
+	// ...
 
 	private void OnDestroy()
 	{

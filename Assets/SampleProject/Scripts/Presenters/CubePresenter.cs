@@ -1,11 +1,11 @@
-using ExampleProject.Models;
-using ExampleProject.Views;
+using SampleProject.Models;
+using SampleProject.Views;
 using Mvp.Messaging;
 using UnityEngine;
 using Mvp.Presenters;
-using ExampleProject.Messaging;
+using SampleProject.Messaging;
 
-namespace ExampleProject.Presenters
+namespace SampleProject.Presenters
 {
     public class CubePresenter : Presenter<CubeView, CubeModel>
     {

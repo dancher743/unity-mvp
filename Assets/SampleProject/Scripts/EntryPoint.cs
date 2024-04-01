@@ -1,11 +1,11 @@
-using ExampleProject.Models;
-using ExampleProject.Presenters;
-using ExampleProject.Views;
+using SampleProject.Models;
+using SampleProject.Presenters;
+using SampleProject.Views;
 using Mvp.Instantiating;
 using Mvp.Messaging;
 using UnityEngine;
 
-namespace ExampleProject
+namespace SampleProject
 {
     public class EntryPoint : MonoBehaviour
     {

@@ -2,7 +2,7 @@ using Mvp.Views;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ExampleProject.Views
+namespace SampleProject.Views
 {
     public class UIView : MonoView
     {

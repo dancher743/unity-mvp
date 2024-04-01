@@ -16,7 +16,7 @@ namespace SampleProject.Presenters
             messageDispatcher.Subscribe(this);
         }
 
-        protected override void OnClean()
+        protected override void OnClear()
         {
             messageDispatcher.Unsubscribe(this);
             messageDispatcher = null;

@@ -1,7 +1,7 @@
 # unity-mvp
 Implementation of MVP (Model-View-Presenter) architectural pattern via Unity engine.
 
-Before starting, it is recommended to get [example project](https://github.com/dancher743/unity-mvp/releases/tag/example_project).
+Before starting, it is recommended to get [sample project](https://github.com/dancher743/unity-mvp/releases/tag/sample-project).
 
 Getting Started
 ---
@@ -175,6 +175,6 @@ public class EntryPoint : MonoBehaviour
 {
 ```
 
-Example
+Sample
 ---
-Example project with the latest version of the package is available [here](https://github.com/dancher743/unity-mvp/releases/tag/example_project).
+Sample project with the latest version of the package is available [here](https://github.com/dancher743/unity-mvp/releases/tag/sample-project).

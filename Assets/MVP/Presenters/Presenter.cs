@@ -1,4 +1,5 @@
-﻿using Mvp.Models;
+﻿using Mvp.Clearing;
+using Mvp.Models;
 using Mvp.Views;
 
 namespace Mvp.Presenters

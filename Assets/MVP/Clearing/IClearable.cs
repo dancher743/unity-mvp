@@ -1,4 +1,4 @@
-﻿namespace Mvp
+﻿namespace Mvp.Clearing
 {
     public interface IClearable
     {

@@ -7,6 +7,9 @@ using UnityEngine;
 
 namespace SampleProject
 {
+    /// <summary>
+    /// <see cref="EntryPoint"/> class is like Composition Root where modules are composed together.
+    /// </summary>
     public class EntryPoint : MonoBehaviour
     {
         [Header("Views")]

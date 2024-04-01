@@ -66,6 +66,7 @@ To create an instance of a `Presenter` use `Create<TPresenter>()` method in `Pre
 private CubeView cubeView;
 
 private CubePresenter cubePresenter;
+
 ...
 
 void Start()

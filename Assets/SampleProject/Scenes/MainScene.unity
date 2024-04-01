@@ -705,7 +705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeView: {fileID: 1934782408}
-  UIView: {fileID: 650394283}
+  uiView: {fileID: 650394283}
 --- !u!1 &2963434140047311481
 GameObject:
   m_ObjectHideFlags: 0

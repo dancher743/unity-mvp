@@ -14,10 +14,10 @@ namespace SampleProject
         private CubeView cubeView;
 
         [SerializeField]
-        private UIView UIView;
+        private UIView uiView;
 
         private CubePresenter cubePresenter;
-        private UIPresenter UIPresenter;
+        private UIPresenter uiPresenter;
 
         private readonly IPresenterFactory presenterFactory = new PresenterFactory();
         private readonly MessageDispatcher messageDispatcher = new();
@@ -25,13 +25,13 @@ namespace SampleProject
         private void Start()
         {
             cubePresenter = presenterFactory.Create<CubePresenter>(cubeView, new CubeModel(), messageDispatcher);
-            UIPresenter = presenterFactory.Create<UIPresenter>(UIView, new UIModel(), messageDispatcher);
+            uiPresenter = presenterFactory.Create<UIPresenter>(uiView, new UIModel(), messageDispatcher);
         }
 
         private void OnDestroy()
         {
             cubePresenter.Clear();
-            UIPresenter.Clear();
+            uiPresenter.Clear();
         }
     }
 }

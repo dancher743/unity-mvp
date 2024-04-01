@@ -1,8 +1,6 @@
 ﻿using Mvp.Clearing;
-using Mvp.Models;
-using Mvp.Views;
 
-namespace Mvp.Presenters
+namespace Mvp
 {
     public class Presenter<TView, TModel> : IPresenter, IClearable
         where TView : IView

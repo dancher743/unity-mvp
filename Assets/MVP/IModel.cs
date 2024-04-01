@@ -1,4 +1,4 @@
-﻿namespace Mvp.Models
+﻿namespace Mvp
 {
     public interface IModel
     {

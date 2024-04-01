@@ -1,4 +1,4 @@
-using Mvp.Views;
+using Mvp;
 using UnityEngine;
 using UnityEngine.UI;
 

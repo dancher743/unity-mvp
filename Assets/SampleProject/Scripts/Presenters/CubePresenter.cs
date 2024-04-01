@@ -2,8 +2,8 @@ using SampleProject.Models;
 using SampleProject.Views;
 using Mvp.Messaging;
 using UnityEngine;
-using Mvp.Presenters;
 using SampleProject.Messaging;
+using Mvp;
 
 namespace SampleProject.Presenters
 {

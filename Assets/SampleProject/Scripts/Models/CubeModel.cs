@@ -2,7 +2,7 @@ using Mvp.Models;
 using System;
 using UnityEngine;
 
-namespace ExampleProject.Models
+namespace SampleProject.Models
 {
     public class CubeModel : IModel
     {

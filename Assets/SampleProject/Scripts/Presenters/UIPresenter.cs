@@ -1,10 +1,10 @@
-using ExampleProject.Messaging;
-using ExampleProject.Models;
-using ExampleProject.Views;
+using SampleProject.Messaging;
+using SampleProject.Models;
+using SampleProject.Views;
 using Mvp.Messaging;
 using Mvp.Presenters;
 
-namespace ExampleProject.Presenters
+namespace SampleProject.Presenters
 {
     public class UIPresenter : Presenter<UIView, UIModel>, IMessageSubscriber
     {

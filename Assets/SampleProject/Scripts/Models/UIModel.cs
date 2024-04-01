@@ -1,7 +1,7 @@
 using Mvp.Models;
 using System;
 
-namespace ExampleProject.Models
+namespace SampleProject.Models
 {
     public class UIModel : IModel
     {

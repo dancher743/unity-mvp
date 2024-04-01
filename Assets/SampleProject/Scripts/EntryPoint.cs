@@ -1,7 +1,7 @@
 using SampleProject.Models;
 using SampleProject.Presenters;
 using SampleProject.Views;
-using Mvp.Instantiating;
+using Mvp.PresenterFactory;
 using Mvp.Messaging;
 using UnityEngine;
 

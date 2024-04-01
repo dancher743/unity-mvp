@@ -2,7 +2,7 @@ using SampleProject.Models;
 using SampleProject.Views;
 using Mvp.Messaging;
 using UnityEngine;
-using SampleProject.Messaging;
+using SampleProject.Messages;
 using Mvp;
 
 namespace SampleProject.Presenters

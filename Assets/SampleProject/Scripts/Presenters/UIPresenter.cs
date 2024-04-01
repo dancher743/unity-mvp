@@ -1,4 +1,4 @@
-using SampleProject.Messaging;
+using SampleProject.Messages;
 using SampleProject.Models;
 using SampleProject.Views;
 using Mvp.Messaging;

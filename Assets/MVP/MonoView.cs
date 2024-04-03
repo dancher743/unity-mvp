@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Mvp.Views
+namespace Mvp
 {
     public class MonoView : MonoBehaviour, IView
     {

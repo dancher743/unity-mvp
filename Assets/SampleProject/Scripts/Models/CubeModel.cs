@@ -1,4 +1,4 @@
-using Mvp.Models;
+using Mvp;
 using System;
 using UnityEngine;
 

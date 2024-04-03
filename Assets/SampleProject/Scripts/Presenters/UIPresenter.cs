@@ -1,8 +1,8 @@
-using SampleProject.Messaging;
+using SampleProject.Messages;
 using SampleProject.Models;
 using SampleProject.Views;
 using Mvp.Messaging;
-using Mvp.Presenters;
+using Mvp;
 
 namespace SampleProject.Presenters
 {

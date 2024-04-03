@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SampleProject.Messaging
+namespace SampleProject.Messages
 {
     public readonly struct CubeColorMessage
     {

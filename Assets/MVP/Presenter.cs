@@ -20,6 +20,8 @@ namespace Mvp
         {
             OnRemoveEventHandlers();
             OnClear();
+            view = default;
+            model = default;
         }
 
         protected virtual void OnAddEventHandlers()

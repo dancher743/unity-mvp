@@ -57,7 +57,7 @@ public class CubePresenter : Presenter<CubeView, CubeModel>
 
 At this point we're done with the main components of MVP - `CubeModel`, `CubeView` and `CubePresenter`!
 
-Instantiating
+Instancing
 ---
 To create an instance of a `Presenter` use `Create<TPresenter>()` method in `PresenterFactory` -
 

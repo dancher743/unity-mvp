@@ -1,4 +1,4 @@
-namespace Mvp.PresenterFactory
+namespace Mvp.Instancing
 {
     public interface IPresenterFactory
     {

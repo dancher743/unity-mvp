@@ -126,9 +126,9 @@ public class UIPresenter : Presenter<UIView, UIModel>, IMessageSubscriber
 Switch-case is used here as a way to handle a message from `CubePresenter`.
 
 ### Send a Message
-To send a _Message_ to some `Presenter` use `SendMessageTo<TSubscriber, TMessage>(TMessage message)` method in `PresenterManager` -
+To send a _Message_ to some `Presenter` use `DispatchMessageTo<TSubscriber, TMessage>(TMessage message)` method in `MessageDispatcher` -
 
-`PresenterManager.DispatchMessageTo<UIPresenter, CubeColorData>(new CubeColorData(color))`
+`MessageDispatcher.DispatchMessageTo<UIPresenter, CubeColorData>(new CubeColorData(color))`
 
 In the example where `CubePresenter` class is -
 
@@ -140,7 +140,7 @@ public class CubePresenter : Presenter<CubeView, CubeModel>
 	private void OnModelColorChanged(Color color)
 	{
 		view.Color = color;
-		messageDispatcher.SendMessageTo<UIPresenter, CubeColorMessage>(new CubeColorMessage { Color = color });
+		messageDispatcher.DispatchMessageTo<UIPresenter, CubeColorMessage>(new CubeColorMessage { Color = color });
 	}
 }
 ```

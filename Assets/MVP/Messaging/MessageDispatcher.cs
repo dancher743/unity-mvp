@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Mvp.Messaging
 {
-    public class MessageDispatcher
+    public class MessageDispatcher : IMessageDispatcher
     {
         private readonly Dictionary<int, IMessageSubscriber> subscribers = new();
 
@@ -29,7 +29,7 @@ namespace Mvp.Messaging
             subscribers.Remove(key);
         }
 
-        public void SendMessageTo<TSubscriber, TMessage>(TMessage message) where TSubscriber : IMessageSubscriber
+        public void DispatchMessageTo<TSubscriber, TMessage>(TMessage message) where TSubscriber : IMessageSubscriber
         {
             var key = GetKeyForSubscriber(typeof(TSubscriber));
 
@@ -39,7 +39,7 @@ namespace Mvp.Messaging
             }
         }
 
-        public void SendMessageToAll<TMessage>(TMessage message, bool isInReverseOrder = false)
+        public void DispatchMessageToAll<TMessage>(TMessage message, bool isInReverseOrder = false)
         {
             var allSubscribers = subscribers.Values;
 

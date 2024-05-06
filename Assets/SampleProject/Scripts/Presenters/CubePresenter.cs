@@ -9,9 +9,9 @@ namespace SampleProject.Presenters
 {
     public class CubePresenter : Presenter<CubeView, CubeModel>
     {
-        private MessageDispatcher messageDispatcher;
+        private IMessageDispatcher messageDispatcher;
 
-        public CubePresenter(CubeView view, CubeModel model, MessageDispatcher messageDispatcher) : base(view, model)
+        public CubePresenter(CubeView view, CubeModel model, IMessageDispatcher messageDispatcher) : base(view, model)
         {
             this.messageDispatcher = messageDispatcher;
             model.Color = Color.white;
@@ -42,7 +42,7 @@ namespace SampleProject.Presenters
         private void OnModelColorChanged(Color color)
         {
             view.Color = color;
-            messageDispatcher.SendMessageTo<UIPresenter, CubeColorMessage>(new CubeColorMessage { Color = color });
+            messageDispatcher.DispatchMessageTo<UIPresenter, CubeColorMessage>(new CubeColorMessage { Color = color });
         }
     }
 }

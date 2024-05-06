@@ -23,7 +23,7 @@ namespace SampleProject
         private UIPresenter uiPresenter;
 
         private readonly IPresenterFactory presenterFactory = new PresenterFactory();
-        private readonly MessageDispatcher messageDispatcher = new();
+        private readonly IMessageDispatcher messageDispatcher = new MessageDispatcher();
 
         private void Start()
         {

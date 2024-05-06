@@ -8,9 +8,9 @@ namespace SampleProject.Presenters
 {
     public class UIPresenter : Presenter<UIView, UIModel>, IMessageSubscriber
     {
-        private MessageDispatcher messageDispatcher;
+        private IMessageDispatcher messageDispatcher;
 
-        public UIPresenter(UIView view, UIModel model, MessageDispatcher messageDispatcher) : base(view, model)
+        public UIPresenter(UIView view, UIModel model, IMessageDispatcher messageDispatcher) : base(view, model)
         {
             this.messageDispatcher = messageDispatcher;
             messageDispatcher.Subscribe(this);
